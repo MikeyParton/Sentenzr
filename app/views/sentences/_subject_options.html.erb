@@ -1,0 +1,9 @@
+<div id= "subject-options" class="options-container">
+<h3>Subject</h3>
+	<% @subjects.each do |subject| %>
+		<%= form_for @sentence, remote: true do |f|  %>
+			<%= f.hidden_field :subject_id, value: subject.id %>
+			<%= f.submit "#{subject.word}", class: "word #{option_active?(:subject_id, subject.id)}" %>
+		<% end %>
+	<% end %>
+</div>

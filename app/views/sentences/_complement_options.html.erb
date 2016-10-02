@@ -1,0 +1,9 @@
+<div id= "complement-options" class="options-container">
+<h3>Complement</h3>
+	<% @complements.each do |complement| %>
+		<%= form_for @sentence, remote: true do |f|  %>
+			<%= f.hidden_field :complement_id, value: complement.id %>
+			<%= f.submit "#{complement.word}", class: "word #{option_active?(:complement_id, complement.id)}" %>
+		<% end %>
+	<% end %>
+</div>

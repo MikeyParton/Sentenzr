@@ -1,0 +1,9 @@
+<% @sentence.blocks.each do |block| %>
+	<span>
+		<% if Sentence::EDITABLE.include?(block[:class]) %>
+		<%= link_to block[:words], eval("#{block[:class]}_options_sentence_path(1)"), class: "#{block[:class]} editable #{is_editing?(block[:class])}", remote: true %>
+		<% else %>
+		<%= block[:words] %>
+		<% end %>
+	</span>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  word: MyString
+  present_simple: MyString
+  continuous: MyString
+  past_simple: MyString
+  past_participle: MyString
+  kind: MyString
+
+two:
+  word: MyString
+  present_simple: MyString
+  continuous: MyString
+  past_simple: MyString
+  past_participle: MyString
+  kind: MyString

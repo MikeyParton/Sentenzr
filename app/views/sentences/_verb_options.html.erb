@@ -1,0 +1,9 @@
+<div id= "verb-options" class="options-container">
+<h3>Verb</h3>
+	<% @verbs.each do |verb| %>
+		<%= form_for @sentence, remote: true do |f|  %>
+			<%= f.hidden_field :verb_id, value: verb.id %>
+			<%= f.submit "#{verb.word}", class: "word #{option_active?(:verb_id, verb.id)}" %>
+		<% end %>
+	<% end %>
+</div>

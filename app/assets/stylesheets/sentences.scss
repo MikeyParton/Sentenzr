@@ -1,0 +1,222 @@
+a {
+    text-decoration: none;
+}
+
+a:link {
+        text-decoration: none;
+    }
+
+a:visited {
+        text-decoration: none;
+    }
+
+a:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+img {
+   height: 50px;
+    margin-top:100px;
+}
+
+.sentence {
+    text-align: center;
+    span {
+        margin: 5px;
+        font-size: 32px;
+    }
+    .body{
+        padding: 100px 0 30px 0;
+    }
+}
+
+#input-options {
+    
+    .word {
+        border: 0;
+        width: 100px;
+        padding: 10px 0 10px 0;
+        margin: 6px 3px 5px 3px;
+        background-color: white;
+    }    
+}
+
+container-right{
+    left: 0px;
+    postion: absolute;
+}
+
+.controls-row {
+    border-top: 1px solid grey;
+    margin: 0 auto;
+    width: 750px;
+}
+
+.controls-col {
+    display: inline-block;
+    width: 350px;
+    vertical-align: top;
+}
+
+.verticalLine {
+    border-right: 1px solid grey;
+}
+
+.options-container {
+    text-align: left;
+    padding: 0 10px 20px 10px;
+    
+    h3, h4 {
+        text-align: center;
+    }
+    
+    .edit_sentence {
+        display: inline-block;
+    }
+    
+    .tense-modifier, .tense, .positive, .negative, .question{
+            border: 0;
+            width: 100px;
+            padding: 10px 0 10px 0;
+            color: white;
+            margin: 6px 3px 5px 3px
+    }
+
+    .positive {
+        border: 1px solid #3FA34D;
+        color: #3FA34D;
+        background-color: white;         
+    }
+
+    .positive.active{
+        background-color: #3FA34D;    
+        color: white;
+    }
+
+    .negative {
+        border: 1px solid #C44536;
+        color: #C44536;
+        background-color: white;         
+    }
+
+    .negative.active{
+        background-color: #C44536;    
+        color: white;
+    }
+
+    .question {
+        border: 1px solid #FFB627;
+        color: #FFB627;
+        background-color: white;  
+    }
+
+    .question.active{
+        background-color: #FFB627;    
+        color: white;
+    }
+
+    .tense{
+        border: 1px solid #00A6FB;
+        color: #00A6FB;
+        background-color: white;         
+    }
+
+    .tense.active{
+        background-color: #00A6FB;    
+        color: white;
+    }
+
+    .tense-modifier{
+        border: 1px solid #3943B7;
+        color: #3943B7;
+        background-color: white;
+    }
+
+    .tense-modifier.active{
+        background-color: #3943B7;    
+        color: white;
+    }
+    
+    .perfect-continuous {
+        width: 320px;
+    }
+}
+
+container-left{
+    .options-container{
+        position: absolute;
+        right: 0;
+    }
+}
+
+#subject-options {
+    color: blue;
+    .word {
+        border: 1px solid blue;
+    }
+    .word.active{
+            background-color: blue;    
+            color: white;
+        }
+}
+
+#verb-options {
+    color: red;
+    .word {
+        border: 1px solid red;
+    }
+    .word.active{
+        background-color: red;    
+        color: white;
+    }
+}
+
+#complement-options {
+    color: green;
+    .word {
+        border: 1px solid green;
+    }
+    .word.active{
+        background-color: green;    
+        color: white;
+    }
+}
+
+.editable.active {
+    padding: 0 5px 0 5px;
+}
+
+.subject {
+    border-bottom: 2px solid blue  
+}
+
+.subject.active {
+    color: white;
+    background-color: blue;
+}
+
+.verb {
+    border-bottom: 2px solid red
+}
+
+.verb.active {
+    color: white;
+    background-color: red;
+}
+
+.complement {
+    border-bottom: 2px solid green;
+}
+
+.complement.active {
+    color: white;
+    background-color: green;
+}

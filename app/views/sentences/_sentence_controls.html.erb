@@ -1,0 +1,23 @@
+<div id = "sentence-controls" class="options-container">
+	<h3>Structure</h3>
+	<% Sentence::STRUCTURES.each do |structure| %>
+		<%= form_for @sentence, remote: true do |f| %>
+			<%= f.hidden_field :structure, value: structure %>
+			<%= f.submit "#{structure}", class: "#{structure} word #{option_active?(:structure, structure)} " %>
+		<% end %>
+	<% end %>
+		<% Sentence::TENSES.each do |tense| %>
+			<%= form_for @sentence, remote: true do |f|  %>
+				<%= f.hidden_field :tense, value: tense %>
+				<%= f.submit "#{tense}", class: "tense word #{option_active?(:tense, tense)}" %>
+			<% end %>
+		<% end %>
+
+		<% Sentence::TENSE_MODIFIERS.each do |modifier| %>
+			<%= form_for @sentence, remote: true do |f|  %>
+				<%= f.hidden_field :tense_modifier, value: modifier %>
+				<%= f.submit "#{modifier}", class: "tense-modifier word #{modifier} #{option_active?(:tense_modifier, modifier)}"%>
+			<% end %>
+		<% end %>
+	<h4><%= "#{@sentence.structure.capitalize} #{@sentence.tense} #{@sentence.tense_modifier}  " %></h4>
+</div>
