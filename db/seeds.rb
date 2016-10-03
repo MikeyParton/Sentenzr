@@ -22,7 +22,6 @@ verbs_list = [
     ["take", "takes", "taking", "took", "taken"],
     ["see", "sees", "seeing", "saw", "seen"],
     ["come", "comes", "coming", "came", "come"],
-    ["want", "wants", "W", "made", "made"],
     ["think", "thinks", "thinking", "thought", "thought"],
     ["eat", "eats", "eating", "ate", "eaten"]
 ]
