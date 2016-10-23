@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier}" %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="timeline">
+	<div class="before-meter">
+	<%= fa_icon "clock-o 3x" %>
+	</div>
+	<div class="meter-container animate">
+		<div class="meter">
+		  <div class="past">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Past</span>
+		  </div>
+		  <div class="now">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Now</span>
+		  </div>	
+		  <span style="width: 10%; margin-left: 20%;"></span>
+		</div>
+	</div>
+	</div>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<h4 class="panel-title">Uses</h4>
+		</li>
+		<li class="list-group-item">
+			<ul class="uses">
+				<li>Actions occuring at some moment in the past.</li>
+				<li>Longer temporary processes happening around that moment.</li>
+			</ul>
+		</li>
+		<li class="list-group-item">
+		<h4 class="panel-title">Examples</h4>
+		</li>
+		<li class="list-group-item">
+		<ul class="eg-list">
+			<li class="eg">
+				<span>"The guard was sleeping when the thieves robbed the bank."</span><br>
+				<span class="eg-explanation">(Action happening when the thieves robbed the bank)</span>
+			</li>
+			<li class="eg">
+				<span>"Kim was training for the Olympics last year."</span><br>
+				<span class="eg-explanation">(Longer temporary action last year)</span>
+			</li>
+		</ul>
+		</li>
+	</ul>
+</div>
+
+
+
+
+

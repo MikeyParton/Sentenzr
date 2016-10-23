@@ -1,9 +1,30 @@
 <div id= "complement-options" class="options-container">
-<h3>Complement</h3>
-	<% @complements.each do |complement| %>
-		<%= form_for @sentence, remote: true do |f|  %>
-			<%= f.hidden_field :complement_id, value: complement.id %>
-			<%= f.submit "#{complement.word}", class: "word #{option_active?(:complement_id, complement.id)}" %>
+  <div class="panel panel-default word-select">	
+    <div class="panel-heading">
+      <h1 class="panel-title">Complement</h1>
+    </div>
+    <div class="panel-body">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div>
+	  <% @complements.each do |complement| %>
+        <%= form_for @sentence, remote: true do |f|  %>
+		  <%= f.hidden_field :complement_id, value: complement.id %>
+		  <%= f.submit "#{complement.word}", class: "word #{option_active?(:complement_id, complement.id)}" %>
 		<% end %>
-	<% end %>
+	  <% end %>
+	</div>
+  </div>
+
+  <div id= "explanation" class="panel panel-default">	
+	<div class="panel-heading">
+	  <h1 class="panel-title"><%= @sentence.complement.word %></h1>
+	</div>
+    <div class="panel-body">
+    </div>
+  </div>
+  
 </div>

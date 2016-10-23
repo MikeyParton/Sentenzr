@@ -1,0 +1,58 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier}" %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="timeline">
+	<div class="before-meter">
+	<%= fa_icon "clock-o 3x" %>
+	</div>
+	<div class="meter-container">
+		<div class="meter">
+		  <div class="now">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Now</span>
+		  </div>
+		  <div class="fill" style="width: 5%; margin-left: 35%;"></div>
+		  <div class="glow" style="width: 12.5%; margin-left: 37.5%;"></div>
+		</div>
+	</div>
+	</div>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<h4 class="panel-title">Uses</h4>
+		</li>
+		<li class="list-group-item">
+		A completed past action or state that is connected to the present by:
+			<ul class="uses">
+				<li>An incomplete time period</li>
+				<li>Giving context to the present situation.</li>
+			</ul>
+		</li>
+		<li class="list-group-item">
+		<h4 class="panel-title">Examples</h4>
+		</li>
+		<li class="list-group-item">
+		<ul class="eg-list">
+			<li class="eg">
+				<span>"I have had 6 cups of coffee today!"</span><br>
+				<span class="eg-explanation">(Incomplete time period – today is not finished)</span>
+			</li>
+			<li class="eg">
+				<span>"Are you hungry? No, I have eaten already."</span><br>
+				<span class="eg-explanation">(Context - this explains why I’m not hungry now)</span>
+			</li>
+			<li class="eg">
+				<span>"Sarah has never been to Asia."</span><br>
+				<span class="eg-explanation">(Incomplete time period - Sarah’s life is not finished)</span>
+			</li>
+		</ul>
+		</li>
+	</ul>
+</div>
+
+
+
+
+

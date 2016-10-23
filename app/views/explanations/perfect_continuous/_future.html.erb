@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier.humanize}" %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="timeline">
+	<div class="before-meter">
+	<%= fa_icon "clock-o 3x" %>
+	</div>
+	<div class="meter-container animate">
+		<div class="meter">
+		  <div class="now">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Now</span>
+		  </div>
+		  <div class="future">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Future</span>
+		  </div>
+		  <span style="width: 12%; margin-left: 65%;"></span>
+		</div>
+	</div>
+	</div>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<h4 class="panel-title">Uses</h4>
+		</li>
+		<li class="list-group-item">
+		An action or state that started and is predicted to continue up to some moment in the future.
+			<ul class="uses">
+				<li>Usually focuses on the duration of the action.</li>
+				<li>May also give context to the future situation.</li>
+			</ul>
+		</li>
+		<li class="list-group-item">
+		<h4 class="panel-title">Examples</h4>
+		</li>
+		<li class="list-group-item">
+		<ul class="eg-list">
+			<li class="eg">
+				<span>"Next year my dad will have been teaching for 25 years."</span><br>
+				<span class="eg-explanation">(Focus on the duration of my dad teaching one year in the future)</span>
+			</li>
+			<li class="eg">
+				<span>"You will probably want to stretch your legs after the flight because you will have been sitting on the plane for so long."</span><br>
+				<span class="eg-explanation">(Context – explains why you will want to stretch)</span>
+			</li>
+		</ul>
+		</li>
+	</ul>
+</div>
+
+
+
+
+

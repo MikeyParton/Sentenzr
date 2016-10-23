@@ -1,5 +1,10 @@
 class Complement < ApplicationRecord
-    def get(options)
+    
+    def css
+        "complement"
+    end
+    
+    def output(options)
         word
     end
 end

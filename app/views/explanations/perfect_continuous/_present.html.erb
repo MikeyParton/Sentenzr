@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier.humanize}" %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="timeline">
+	<div class="before-meter">
+	<%= fa_icon "clock-o 3x" %>
+	</div>
+	<div class="meter-container animate">
+		<div class="meter">
+		  <div class="now">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Now</span>
+		  </div>
+		  <span style="width: 12%; margin-left: 40%;"></span>
+		</div>
+	</div>
+	</div>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<h4 class="panel-title">Uses</h4>
+		</li>
+		<li class="list-group-item">
+		An action or state that started in the past and continues in the present. Usually focuses on the duration of the action.
+			<ul class="uses">
+			</ul>
+		</li>
+		<li class="list-group-item">
+		<h4 class="panel-title">Examples</h4>
+		</li>
+		<li class="list-group-item">
+		<ul class="eg-list">
+			<li class="eg">
+				<span>" Old Garth has been working at the company for 50 years."</span><br>
+				<span class="eg-explanation">(Old Garth still works at the company)</span>
+			</li>
+		</ul>
+		</li>
+	</ul>
+</div>
+
+
+
+
+

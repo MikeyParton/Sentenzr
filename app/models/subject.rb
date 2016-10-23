@@ -1,6 +1,10 @@
 class Subject < ApplicationRecord
     
-    def get(options)
+    def css
+        "subject"
+    end
+    
+    def output(options)
         word
     end
 

@@ -17,7 +17,7 @@ verbs_list = [
     ["do", "does", "doing", "did", "done"],
     ["go", "goes", "going", "went", "gone"],
     ["say", "says", "saying", "said", "said"],
-    ["get", "gets", "getting", "got", "got"],
+    ["get", "gets", "getting", "got", "gotten"],
     ["make", "makes", "making", "made", "made"],
     ["take", "takes", "taking", "took", "taken"],
     ["see", "sees", "seeing", "saw", "seen"],

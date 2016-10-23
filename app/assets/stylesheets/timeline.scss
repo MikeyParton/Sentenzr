@@ -1,0 +1,145 @@
+.timeline {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 80px;
+}
+
+.before-meter{
+    color: #555;
+    padding-right: 10px;
+}
+
+.meter-container {
+    flex: 1;
+    position: relative;
+}
+
+.now {
+    z-index: 100;
+    color: red;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50%, -110%);
+}
+
+.past {
+    position: absolute;
+    left: 25%;
+    top: 0;
+    z-index: 100;
+    color: red;
+    transform: translate(-50%, -110%);
+}
+
+.future {
+    position: absolute;
+    left: 75%;
+    top: 0;
+    z-index: 100;
+    color: red;
+    transform: translate(-50%, -110%);
+}
+
+.marker-label{
+    position: absolute;
+    left: 25px;
+    top:0%;
+    font-size: 20px;
+}
+
+.meter { 
+	height: 20px;
+	position: relative;
+	background-color: lightgrey;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	border: 5px solid #555;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+  display: block;
+  height: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43,194,83);
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.animate {
+    .meter > span:after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background-image: linear-gradient(
+        -45deg, 
+        rgba(255, 255, 255, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 255, .2) 50%, 
+        rgba(255, 255, 255, .2) 75%, 
+        transparent 75%, 
+        transparent
+      );
+      z-index: 1;
+      background-size: 50px 50px;
+      animation: move 2s linear infinite;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      overflow: hidden;
+    }
+}
+
+.meter > span:after, .animate > span > span {
+  animation: move 2s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.fill{
+    height: 100%;
+    position: absolute;
+    background-color: #2bc253;
+    display: inline-block;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.glow {
+    height: 100%;
+    position: absolute;
+    background-color: green;
+    display: inline-block;
+    border-radius: 20px;
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+  from {
+    background-color: #BFAE48; box-shadow: 0 0 2px #BFAE48;
+  }
+  50%{
+    background-color: #FFB627; box-shadow: 0 0 5px #FFB627;      
+    }    
+  to {
+    background-color: #BFAE48; box-shadow: 0 0 2px #BFAE48;
+  }
+}

@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier}" %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="timeline">
+	<div class="before-meter">
+	<%= fa_icon "clock-o 3x" %>
+	</div>
+	<div class="meter-container">
+		<div class="meter">
+		  <div class="now">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Now</span>
+		  </div>
+		  <div class="future">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Future</span>
+		  </div>
+		  <span style="width: 5%; margin-left: 72.5%;"></span>
+		</div>
+	</div>
+	</div>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<h4 class="panel-title">Uses</h4>
+		</li>
+		<li class="list-group-item">
+			<ul class="uses">
+				<li>Basic predictions about the future.</li>
+				<li>New Plans.</li>
+			</ul>
+		</li>
+		<li class="list-group-item">
+		<h4 class="panel-title">Examples</h4>
+		</li>
+		<li class="list-group-item">
+		<ul class="eg-list">
+			<li class="eg">
+				<span>"In 50 years a robot will be president"</span><br>
+				<span class="eg-explanation">(Future prediction)</span>
+			</li>
+			<li class="eg">
+				<span>"Hmmm, I think I will clean my room tomorrow"</span><br>
+				<span class="eg-explanation">(New Plan - I make the decision now)</span>
+			</li>
+		</ul>
+		</li>
+	</ul>
+</div>
+
+
+
+
+

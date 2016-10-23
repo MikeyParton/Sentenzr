@@ -6,5 +6,6 @@ Rails.application.routes.draw do
         get 'subject_options', :on => :member
         get 'verb_options', :on => :member
         get 'complement_options', :on => :member
+        get 'structure_options', :on => :member
     end
 end

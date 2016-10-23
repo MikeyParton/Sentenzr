@@ -1,44 +1,207 @@
-a {
-    text-decoration: none;
+html, body
+{
+    height: 100%;
 }
 
-a:link {
-        text-decoration: none;
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#sentence{
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    span {
+        margin: 2px;
     }
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
 
-a:visited {
-        text-decoration: none;
+#structure-options, #verb-options, #subject-options, #complement-options {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.edit_sentence {
+    display: inline-block;
+}
+
+.sliders, .word-select {
+    width: 400px;
+    
+}
+
+#explanation {
+    margin-left: 10px;
+    font-size: 16px;
+    flex: 1;
+    
+    .uses, .eg-list {
+        padding-left: 25px;
     }
-
-a:hover {
-    text-decoration: none;
+    
+    .eg {
+        padding: 5px 0 5px 0;
+    }
+    .eg-explanation{
+        font-style: italic;
+    }
+    
+    .seperator {
+        color: lightgrey;
+        display: flex;
+        justify-content: center;
+        
+        hr {
+            flex: 1;
+        }
+    }
 }
 
-a:hover {
-    text-decoration: none;
+.block{
+    position: relative;
+    padding:5px 10px 0 10px;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+    .fa {
+        padding-right: 5px;
+    }
 }
 
-a:active {
-    text-decoration: none;
+.block-header{
+    font-size: 16px;
 }
 
-img {
+.fixed-content{
+    background-color: white;
+    text-align: center;
+    margin: 30px 0 30px 0;
+}
+
+.logo {
    height: 50px;
-    margin-top:100px;
+}
+
+hr {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.main-gallery {
+  flex: 1 100%;
+}
+
+.gallery-cell {
+  width: 100%;
+  height: 80px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+  color: white;
+  font-size: 20px;
+}
+
+.vertical-align{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap{
+    text-align: center;
+    white-space: pre-line;
+}
+
+
+#positive{
+    background-color: #3FA34D;
+}
+
+#negative {
+    background-color: #C44536;
+}
+    
+#question {
+    background-color: #FFB627;
+}
+
+.tense{
+    .gallery-cell {
+        background-color: #00A6FB;
+    }
+}
+
+.tense-modifier{
+    .gallery-cell {
+        background-color: #3943B7;
+    }
+}
+
+.sentence-option {
+    border: 1px solid black;
+}
+
+.match-icon {
+    font-family: 'Fredoka One', cursive;
+}
+
+.option-row{
+    display: flex;
+    justify-content: center;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    
+    .option{
+        cursor: pointer;
+        flex-grow: 1;
+        flex-basis: 0;
+        color: white;
+        border: 1px solid black;
+        margin: 5px 10px 5px 10px;
+        position: relative;
+        padding: 5px 5px 0 5px;
+        
+        font-size: 20px;
+        
+        p {
+            font-size: 16px;
+        }
+        
+        .fa-match-material-icons{
+            padding: 5px;
+        }
+    }
+    
+    .active {
+        color: white;
+    }
+}
+
+a, a:link, a:visited, a:hover, a:active{
+    text-decoration: none;    
 }
 
 .sentence {
     text-align: center;
     span {
         margin: 5px;
-        font-size: 32px;
     }
     .body{
         padding: 100px 0 30px 0;
     }
 }
 
-#input-options {
+#current-options {
+    background-color: #f5f5f5;
+    padding: 10px;
+    height: 100%;
+    flex: 1;
     
     .word {
         border: 0;
@@ -47,114 +210,6 @@ img {
         margin: 6px 3px 5px 3px;
         background-color: white;
     }    
-}
-
-container-right{
-    left: 0px;
-    postion: absolute;
-}
-
-.controls-row {
-    border-top: 1px solid grey;
-    margin: 0 auto;
-    width: 750px;
-}
-
-.controls-col {
-    display: inline-block;
-    width: 350px;
-    vertical-align: top;
-}
-
-.verticalLine {
-    border-right: 1px solid grey;
-}
-
-.options-container {
-    text-align: left;
-    padding: 0 10px 20px 10px;
-    
-    h3, h4 {
-        text-align: center;
-    }
-    
-    .edit_sentence {
-        display: inline-block;
-    }
-    
-    .tense-modifier, .tense, .positive, .negative, .question{
-            border: 0;
-            width: 100px;
-            padding: 10px 0 10px 0;
-            color: white;
-            margin: 6px 3px 5px 3px
-    }
-
-    .positive {
-        border: 1px solid #3FA34D;
-        color: #3FA34D;
-        background-color: white;         
-    }
-
-    .positive.active{
-        background-color: #3FA34D;    
-        color: white;
-    }
-
-    .negative {
-        border: 1px solid #C44536;
-        color: #C44536;
-        background-color: white;         
-    }
-
-    .negative.active{
-        background-color: #C44536;    
-        color: white;
-    }
-
-    .question {
-        border: 1px solid #FFB627;
-        color: #FFB627;
-        background-color: white;  
-    }
-
-    .question.active{
-        background-color: #FFB627;    
-        color: white;
-    }
-
-    .tense{
-        border: 1px solid #00A6FB;
-        color: #00A6FB;
-        background-color: white;         
-    }
-
-    .tense.active{
-        background-color: #00A6FB;    
-        color: white;
-    }
-
-    .tense-modifier{
-        border: 1px solid #3943B7;
-        color: #3943B7;
-        background-color: white;
-    }
-
-    .tense-modifier.active{
-        background-color: #3943B7;    
-        color: white;
-    }
-    
-    .perfect-continuous {
-        width: 320px;
-    }
-}
-
-container-left{
-    .options-container{
-        position: absolute;
-        right: 0;
-    }
 }
 
 #subject-options {
@@ -166,6 +221,20 @@ container-left{
             background-color: blue;    
             color: white;
         }
+}
+
+.structure {
+    color: orange;
+    align-self: flex-start;
+    border: 1px solid orange;
+    font-size: 16px;
+    padding: 0 5px 0 5px;
+    border-radius: 10px;
+    
+    &.active{
+        background-color: orange;    
+        color: white;    
+    }
 }
 
 #verb-options {
@@ -190,12 +259,8 @@ container-left{
     }
 }
 
-.editable.active {
-    padding: 0 5px 0 5px;
-}
-
 .subject {
-    border-bottom: 2px solid blue  
+    border: 2px solid blue  
 }
 
 .subject.active {
@@ -204,7 +269,7 @@ container-left{
 }
 
 .verb {
-    border-bottom: 2px solid red
+    border: 2px solid red
 }
 
 .verb.active {
@@ -213,10 +278,38 @@ container-left{
 }
 
 .complement {
-    border-bottom: 2px solid green;
+    border: 2px solid green;
 }
 
 .complement.active {
     color: white;
     background-color: green;
+}
+
+#structure-options {
+    .panel-heading {
+    background-color: orange;
+    color: white;
+    }
+}
+
+#verb-options {
+    .panel-heading {
+    background-color: red;
+    color: white;
+    }
+}
+
+#subject-options {
+    .panel-heading {
+    background-color: blue;
+    color: white;
+    }
+}
+
+#complement-options {
+    .panel-heading {
+    background-color: green;
+    color: white;
+    }
 }

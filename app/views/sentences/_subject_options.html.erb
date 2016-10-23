@@ -1,9 +1,31 @@
 <div id= "subject-options" class="options-container">
-<h3>Subject</h3>
-	<% @subjects.each do |subject| %>
-		<%= form_for @sentence, remote: true do |f|  %>
-			<%= f.hidden_field :subject_id, value: subject.id %>
-			<%= f.submit "#{subject.word}", class: "word #{option_active?(:subject_id, subject.id)}" %>
+
+  <div class="panel panel-default word-select">	
+    <div class="panel-heading">
+      <h1 class="panel-title">Subject</h1>
+    </div>
+    <div class="panel-body">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div>
+	  <% @subjects.each do |subject| %>
+        <%= form_for @sentence, remote: true do |f|  %>
+		  <%= f.hidden_field :subject_id, value: subject.id %>
+		  <%= f.submit "#{subject.word}", class: "word #{option_active?(:subject_id, subject.id)}" %>
 		<% end %>
-	<% end %>
+	  <% end %>
+	</div>
+  </div>
+
+  <div id= "explanation" class="panel panel-default">	
+	<div class="panel-heading">
+	  <h1 class="panel-title"><%= @sentence.subject.word %></h1>
+	</div>
+    <div class="panel-body">
+    </div>
+  </div>
+
 </div>

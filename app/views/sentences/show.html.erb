@@ -1,14 +1,10 @@
-<div class="sentence">
-	<%= image_tag "sentenzr.png" %>
-	<div class="body">
-		<%= render 'sentence_body' %>
-	</div>
-	<div class="controls-row">
-		<div id= "structure-options" class="controls-col verticalLine">
-			<%= render 'sentence_controls' %>
-		</div>
-		<div id="input-options" class="controls-col">
-			<%= render 'editing' %>
+
+	<div class="fixed-content">
+		<%= image_tag "sentenzr.png", class: "logo" %>
+		<div id="sentence">
+			<%= render 'sentence_body' %>
 		</div>
 	</div>
-</div>
+	<div id="current-options">
+		<%= render session[:editing] %>
+	</div>

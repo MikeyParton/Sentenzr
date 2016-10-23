@@ -1,3 +1,32 @@
-$(".body").html("<%= j render 'sentence_body' %>");
-$("#structure-options").html("<%= j render 'sentence_controls' %>");
-$("#input-options").html("<%= j render 'editing' %>");
+function concealBlocks() {
+	return new Promise(function(resolve, reject) {
+		var length = $(".block").length;
+		$.each($(".block"), function( index, block ) {
+		  setTimeout(function(){ 
+		  	$(block).animate({opacity: 0, top: "+=35px"}, 100, function(){
+		  		if (index == 0){
+		  			resolve();
+		  		}
+		  	});
+		  }, (length - 1 - index) * 50);
+		});
+	});
+}
+
+function revealBlocks() {
+	var length = $(".block").length;
+	$.each($(".block"), function( index, block ) {
+	  setTimeout(function(){ 
+	  	$(block).css("top", "+35px").animate({opacity: 1, top: "-=35px"}, 100, function(){
+	  	});
+	  }, index * 50);
+	});
+}
+
+concealBlocks().then(function(){
+	$("#sentence").html("<%= j render 'sentence_body' %>").find(".block").css("opacity", 0);
+	if ($("#structure-options").length){
+		$("#explanation").html("<%= j render 'explanation_wrapper' %>");
+	}
+	revealBlocks();
+});

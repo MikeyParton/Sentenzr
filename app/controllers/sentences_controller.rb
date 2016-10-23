@@ -23,6 +23,14 @@ class SentencesController < ApplicationController
         end
     end
     
+    def structure_options
+        @sentence = Sentence.find(session[:sentence])
+        session[:editing] = "structure_options"
+        respond_to do |format|
+            format.js
+        end
+    end
+    
     def subject_options
         @sentence = Sentence.find(session[:sentence])
         @subjects = Subject.all

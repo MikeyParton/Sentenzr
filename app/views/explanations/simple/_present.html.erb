@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier}" %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="timeline">
+	<div class="before-meter">
+	<%= fa_icon "clock-o 3x" %>
+	</div>
+	<div class="meter-container">
+		<div class="meter">
+		  <div class="now">
+			<%= fa_icon "map-marker 2x"%>
+			<span class="marker-label">Now</span>
+		  </div>
+		  <span style="width: 5%; margin-left: 47.5%;"></span>
+		</div>
+	</div>
+	</div>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<h4 class="panel-title">Uses</h4>
+		</li>
+		<li class="list-group-item">
+			<ul class="uses">
+				<li>Stable facts around now.</li>
+				<li>Current Habits.</li>
+				<li>Current States.</li>
+			</ul>
+		</li>
+		<li class="list-group-item">
+		<h4 class="panel-title">Examples</h4>
+		</li>
+		<li class="list-group-item">
+		<ul class="eg-list">
+			<li class="eg">
+				<span>"My cat doesn't like water"</span><br>
+				<span class="eg-explanation">(Stable fact - In the future he still won't like water)</span>
+			</li>
+			<li class="eg">
+				<span>"Bill always arrives late"</span><br>
+				<span class="eg-explanation">(Habit - This happens more than once)</span>
+			</li>
+			<li class="eg">
+				<span>"Sandra is at work"</span><br>
+				<span class="eg-explanation">(Current state)</span>
+			</li>
+		</ul>
+		</li>
+	</ul>
+</div>
+
+
+
+
+
