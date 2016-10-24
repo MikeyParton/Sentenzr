@@ -1,26 +1,44 @@
 <div id="sentence-data" data-structure=<%= @sentence.structure %> data-tense=<%= @sentence.tense %> data-tense-modifier= <%= @sentence.tense_modifier %>>
 </div>
+	
+<div class="speech-bubble">
+	<div class="speech-header">
+		<ul class="options-left">
+			<li>
+			<%= link_to edit_sentence_path(@sentence.id) + "?field=structure", class: "menu-option structure editable #{is_editing?('structure')}", remote: true  do %>
+				<%= fa_icon("cog") %><span>Structure</span>
+			<% end %>
+			</li>
+		</ul>
+		<ul class="options-right">
+			<li><a href = "#"><span>New Sentence</span><%= fa_icon("refresh") %></a></li>
+		</ul>
+	</div>
+	<div class="speech-body">
+	<% @sentence.blocks.each do |block| %>
 
-<%= link_to eval("structure_options_sentence_path(@sentence.id)"), class: "block structure editable #{is_editing?('structure')}", remote: true  do %>
-	<%= fa_icon("cog") %>Structure
-<% end %>
-&nbsp;
-<% @sentence.blocks.each do |block| %>
-	<% if Sentence::EDITABLE.include?(block[:class]) %>
-		<%= link_to eval("#{block[:class]}_options_sentence_path(@sentence.id)"), class: "block editable #{block[:class]} #{is_editing?(block[:class])}", remote: true  do %>
-			<div class="block-header">
-				<%= fa_icon("edit") %>
-				<%= block[:class] %>
-			</div>
-			<%= block[:words] %>
-		<% end %>		
-	<% else %>
-		<%= content_tag(:div, class: [block[:class], "block"]) do %>
-			<div class="block-header">
-				<%= block[:class] %>
-			</div>
-			<%= block[:words] %>
+		<% if Sentence::EDITABLE.include?(block[:class]) %>
+			
+			<%= link_to eval("edit_sentence_path(@sentence.id)") + "?field=#{block[:class]}",
+				data: {edit: block[:class]},
+				class: "block editable #{block[:class]} #{is_editing?(block[:class])}",
+				remote: true  do %>
+				<div class="block-header">
+					<%= fa_icon("edit") %>
+					<%= block[:class] %>
+				</div>
+				<%= block[:words] %>
+			<% end %>
+
+		<% else %>
+			<%= content_tag(:div, class: [block[:class], "block"]) do %>
+				<div class="block-header">
+					<%= block[:class] %>
+				</div>
+				<%= block[:words] %>
+			<% end %>
 		<% end %>
+		&nbsp;
 	<% end %>
-	&nbsp;
-<% end %>
+	</div>
+</div>

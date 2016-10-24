@@ -1,5 +1,16 @@
-html, body
-{
+$seaGreen: #399E5A;
+$cyanBlue: #2F97C1;
+$queenBlue: #4464AD;
+$indianRed: #D65E5E;
+$niceYellow: #FFDD4A;
+$silver: #7F8593;
+
+$subject: $cyanBlue;
+$verb: $indianRed;
+$complement: $seaGreen;
+$link: $silver;
+
+html, body{
     height: 100%;
 }
 
@@ -8,9 +19,18 @@ body{
     flex-direction: column;
 }
 
+a, a:link, a:visited, a:hover, a:active{
+    text-decoration: none;    
+}
+
+.logo {  
+   height: 50px;
+}
+
 #sentence{
-    font-family: 'Roboto', sans-serif;
-    font-size: 32px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 20px 20px 0 30px;
+    /*font-family: 'Roboto', sans-serif;*/
     span {
         margin: 2px;
     }
@@ -18,6 +38,58 @@ body{
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
+}
+
+.speech-bubble{
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    
+    .speech-header {
+    display: flex;
+    margin: 5px 0 5px 0;
+    justify-content: space-between;
+        
+        span{
+            padding: 0 5px 0 5px;
+        }
+        
+        a {
+            color: $link;
+        }
+        
+        ul{
+            padding: 0px;
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            padding: 0 10px 0 0;
+        }
+    }
+    
+    .speech-body{
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    &:after {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 50%;
+        transform: translate(-100%, -50%);
+        border-style: solid;
+        border-width: 15px 26.0px 15px 0;
+        border-color: transparent white transparent transparent;
+    }
 }
 
 #structure-options, #verb-options, #subject-options, #complement-options {
@@ -31,8 +103,7 @@ body{
 }
 
 .sliders, .word-select {
-    width: 400px;
-    
+    width: 400px; 
 }
 
 #explanation {
@@ -50,45 +121,28 @@ body{
     .eg-explanation{
         font-style: italic;
     }
-    
-    .seperator {
-        color: lightgrey;
-        display: flex;
-        justify-content: center;
-        
-        hr {
-            flex: 1;
-        }
-    }
 }
 
 .block{
+    
+    .block-header{
+        font-size: 14px;
+    }
+    font-size: 32px;
     position: relative;
     padding:5px 10px 0 10px;
     border-radius: 10px;
-    margin: 10px 0 10px 0;
+    margin: 0 0 10px 0;
+    
     .fa {
         padding-right: 5px;
     }
 }
 
-.block-header{
-    font-size: 16px;
-}
-
 .fixed-content{
-    background-color: white;
+    background-color: #EFEFEF;
     text-align: center;
-    margin: 30px 0 30px 0;
-}
-
-.logo {
-   height: 50px;
-}
-
-hr {
-    margin-bottom: 8px;
-    margin-top: 8px;
+    padding: 30px 0 30px 0;
 }
 
 .main-gallery {
@@ -117,7 +171,6 @@ hr {
     text-align: center;
     white-space: pre-line;
 }
-
 
 #positive{
     background-color: #3FA34D;
@@ -151,42 +204,6 @@ hr {
     font-family: 'Fredoka One', cursive;
 }
 
-.option-row{
-    display: flex;
-    justify-content: center;
-    font-family: 'Fredoka One', cursive;
-    text-align: center;
-    
-    .option{
-        cursor: pointer;
-        flex-grow: 1;
-        flex-basis: 0;
-        color: white;
-        border: 1px solid black;
-        margin: 5px 10px 5px 10px;
-        position: relative;
-        padding: 5px 5px 0 5px;
-        
-        font-size: 20px;
-        
-        p {
-            font-size: 16px;
-        }
-        
-        .fa-match-material-icons{
-            padding: 5px;
-        }
-    }
-    
-    .active {
-        color: white;
-    }
-}
-
-a, a:link, a:visited, a:hover, a:active{
-    text-decoration: none;    
-}
-
 .sentence {
     text-align: center;
     span {
@@ -213,77 +230,63 @@ a, a:link, a:visited, a:hover, a:active{
 }
 
 #subject-options {
-    color: blue;
+    color: $subject;
     .word {
-        border: 1px solid blue;
+        border: 1px solid $subject;
     }
     .word.active{
-            background-color: blue;    
+            background-color: $subject;    
             color: white;
         }
 }
 
-.structure {
-    color: orange;
-    align-self: flex-start;
-    border: 1px solid orange;
-    font-size: 16px;
-    padding: 0 5px 0 5px;
-    border-radius: 10px;
-    
-    &.active{
-        background-color: orange;    
-        color: white;    
-    }
-}
-
 #verb-options {
-    color: red;
+    color: $verb;
     .word {
-        border: 1px solid red;
+        border: 1px solid $verb;
     }
     .word.active{
-        background-color: red;    
+        background-color: $verb;    
         color: white;
     }
 }
 
 #complement-options {
-    color: green;
+    color: $complement;
     .word {
-        border: 1px solid green;
+        border: 1px solid $complement;
     }
     .word.active{
-        background-color: green;    
+        background-color: $complement;    
         color: white;
     }
 }
 
 .subject {
-    border: 2px solid blue  
+    border: 2px solid $subject  
 }
 
 .subject.active {
     color: white;
-    background-color: blue;
+    background-color: $subject;
 }
 
 .verb {
-    border: 2px solid red
+    border: 2px solid $verb;
 }
 
 .verb.active {
     color: white;
-    background-color: red;
+    background-color: $verb;
 }
 
 .complement {
-    border: 2px solid green;
+    border: 2px solid $complement;
 }
 
 .complement.active {
     color: white;
-    background-color: green;
+    background-color: $complement;
 }
 
 #structure-options {

@@ -3,7 +3,7 @@ class SentencesController < ApplicationController
         if session[:sentence].nil?
             @sentence = Sentence.setup
             session[:sentence] = @sentence.id
-            session[:editing] = "subject_options"
+            session[:editing] = "subject"
         else
             @sentence = Sentence.find(session[:sentence])
         end
@@ -23,40 +23,16 @@ class SentencesController < ApplicationController
         end
     end
     
-    def structure_options
-        @sentence = Sentence.find(session[:sentence])
-        session[:editing] = "structure_options"
+    def edit
+        @sentence = Sentence.find(params[:id])
+        session[:editing] = params[:field]
+        unless session[:editing] == "structure"
+            eval("@#{params[:field].pluralize(2)} = #{params[:field].capitalize}.all")
+        end
         respond_to do |format|
             format.js
         end
     end
-    
-    def subject_options
-        @sentence = Sentence.find(session[:sentence])
-        @subjects = Subject.all
-        session[:editing] = "subject_options"
-        respond_to do |format|
-            format.js
-        end
-	end
-    
-    def verb_options
-        @sentence = Sentence.find(session[:sentence])
-        @verbs = Verb.all
-        session[:editing] = "verb_options"
-        respond_to do |format|
-            format.js
-        end
-	end
-    
-    def complement_options
-        @sentence = Sentence.find(session[:sentence])
-        @complements = Complement.all
-        session[:editing] = "complement_options"
-        respond_to do |format|
-            format.js
-        end
-	end
     
     private
         def sentence_params

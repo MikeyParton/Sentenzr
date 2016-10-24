@@ -4,6 +4,6 @@ module SentencesHelper
     end
     
     def is_editing?(block)
-        "active" if session[:editing] == "#{block}_options"
+        "active" if session[:editing] == "#{block}"
     end
 end
