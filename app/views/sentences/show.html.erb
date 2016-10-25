@@ -1,4 +1,7 @@
-
+<div class="lang">
+	<%= image_tag "eng.png", alt: "english" %>
+	<%= image_tag "esp.png", alt: "español" %>
+</div>
 	<div class="fixed-content">
 		<%= image_tag "sentenzr.png", class: "logo" %>
 		<div id="sentence">
@@ -6,5 +9,10 @@
 		</div>
 	</div>
 	<div id="current-options">
-		<%= render session[:editing] %>
+		<div id ="main">
+			<%= render "main" %>
+		</div>
+		<div id="secondary">
+			<%= render "secondary" %>
+		</div>
 	</div>

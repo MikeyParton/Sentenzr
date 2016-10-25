@@ -1,6 +1,8 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h1 class="panel-title"><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier.humanize}" %></h1>
+  <div class="panel-header">
+    <%= fa_icon "circle" %>
+    <h4><%= "#{@sentence.tense.capitalize} #{@sentence.tense_modifier.humanize}" %></h4>
+    <%= fa_icon "circle"%>
   </div>
   <div class="panel-body">
     <div class="timeline">

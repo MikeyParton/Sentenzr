@@ -1,7 +1,9 @@
 <div id= "verb-options" class="options-container">
   <div class="panel panel-default word-select">	
-    <div class="panel-heading">
-      <h1 class="panel-title">Verb</h1>
+    <div class="panel-header">
+      <%= fa_icon "circle" %>
+      <h4><%= session[:editing].capitalize %></h4>
+      <%= fa_icon "circle"%>
     </div>
     <div class="panel-body">
       <div class="input-group">
@@ -17,13 +19,5 @@
 		<% end %>
 	  <% end %>
 	</div>
-  </div>
-
-<div id= "explanation" class="panel panel-default">	
-	<div class="panel-heading">
-	  <h1 class="panel-title"><%= @sentence.verb.word %></h1>
-	</div>
-    <div class="panel-body">
-    </div>
   </div>
 </div>

@@ -1,0 +1,29 @@
+<% if session[:editing] != "structure" %>
+
+     <%= content_tag :div, class: ["panel", "panel-default", "#{session[:editing]}-panel"] do %>
+      <div class="panel-header">
+        <%= fa_icon "circle" %>
+        <h4><%= session[:editing].capitalize %></h4>
+        <%= fa_icon "circle"%>
+      </div>
+      <div class="panel-body">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div>
+        <div class="word-list">
+  	  <% @editing.each do |option| %>
+          <%= form_for @sentence, remote: true do |f|  %>
+  		  <%= f.hidden_field (session[:editing] + '_id').to_sym, value: option.id %>
+  		  <%= f.submit "#{option.word.capitalize}", class: "word #{option_active?( (session[:editing] + '_id').to_sym, option.id)}" %>
+  		<% end %>
+  	  <% end %>
+      </div>
+  	</div>
+  <% end %>
+
+<% else %>
+  <%= render "sentence_controls" %>
+<% end %>

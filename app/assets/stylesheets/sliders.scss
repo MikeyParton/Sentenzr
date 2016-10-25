@@ -1,0 +1,63 @@
+.main-gallery {
+  flex: 1 100%;
+	
+	&:first-of-type{
+		.flickity-viewport{
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+	}
+	&:last-of-type{
+		.flickity-viewport{
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+	}
+}
+
+.gallery-cell {
+  width: 100%;
+  height: 80px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+  color: white;
+  font-size: 20px;
+}
+
+.vertical-align{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap{
+    text-align: center;
+    white-space: pre-line;
+}
+
+#positive{
+    background-color: #3FA34D;
+}
+
+#negative {
+    background-color: #C44536;
+}
+    
+#question {
+    background-color: #FFB627;
+}
+
+.tense{
+    .gallery-cell {
+        background-color: #00A6FB;
+    }
+}
+
+.tense-modifier{
+    .gallery-cell {
+        background-color: #3943B7;
+    }
+}

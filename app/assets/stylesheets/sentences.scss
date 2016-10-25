@@ -40,6 +40,22 @@ a, a:link, a:visited, a:hover, a:active{
     flex-wrap: wrap;
 }
 
+.lang{
+	display: flex;
+	width: 100%;
+	text-align: right;
+	z-index: 30;
+	height: 20px;
+	background-color: transparent;
+	position: absolute;
+	justify-content: space-between;
+	
+	img {
+		height: 30px;
+		margin: 20px;
+	}
+}
+
 .speech-bubble{
     position: relative;
     background-color: white;
@@ -99,15 +115,23 @@ a, a:link, a:visited, a:hover, a:active{
 }
 
 .edit_sentence {
-    display: inline-block;
+	width: 33%;
+  display: inline-block;
+	padding: 6px 3px 5px 3px;
 }
 
-.sliders, .word-select {
-    width: 400px; 
+#main {
+  width: 400px; 
+}
+
+#secondary {
+	margin-left: 10px;
+	flex: 1;
+	height: 100%;
 }
 
 #explanation {
-    margin-left: 10px;
+    
     font-size: 16px;
     flex: 1;
     
@@ -140,13 +164,28 @@ a, a:link, a:visited, a:hover, a:active{
 }
 
 .fixed-content{
-    background-color: #EFEFEF;
-    text-align: center;
-    padding: 30px 0 30px 0;
+	background-color: #EFEFEF;
+	text-align: center;
+	padding: 30px 0 30px 0;
+	position: relative;
+	
 }
 
 .main-gallery {
   flex: 1 100%;
+	
+	&:first-of-type{
+		.flickity-viewport{
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+	}
+	&:last-of-type{
+		.flickity-viewport{
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+	}
 }
 
 .gallery-cell {
@@ -214,52 +253,94 @@ a, a:link, a:visited, a:hover, a:active{
     }
 }
 
+.panel-header{
+	text-align: center;
+	color: $link;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	margin: 10px 10px 10px 10px;
+	
+	.fa{
+		line-height: inherit;
+	}
+	
+	h4 {
+		margin: 0;
+		i {
+			margin-right: 10px;
+		}
+	}
+}
+
+.verb-panel{
+	.panel-header{
+		color: $verb;
+	}
+  .word {
+		color: $verb;
+   	border-color: $verb;
+		
+		&.always-active, &.active{
+			background-color: $verb;    
+			color: white;
+		}
+  }
+}
+
+.subject-panel{
+	.panel-header{
+		color: $subject;
+	}
+  .word {
+		color: $subject;
+   	border-color: $subject;
+	
+		&.active, &.always-active{
+			background-color: $subject;    
+			color: white;
+		}
+		
+  }
+}
+
+.complement-panel{
+	.panel-header{
+		color: $complement;
+	}
+  .word {
+		color: $complement;
+   	border-color: $complement;
+	
+		&.always-active, &.active{
+			background-color: $complement;    
+			color: white;
+		}
+		
+  }
+}
+
 #current-options {
     background-color: #f5f5f5;
     padding: 10px;
     height: 100%;
-    flex: 1;
-    
-    .word {
-        border: 0;
-        width: 100px;
-        padding: 10px 0 10px 0;
-        margin: 6px 3px 5px 3px;
-        background-color: white;
-    }    
+		width: 100%;
+    display: flex; 
 }
 
-#subject-options {
-    color: $subject;
-    .word {
-        border: 1px solid $subject;
-    }
-    .word.active{
-            background-color: $subject;    
-            color: white;
-        }
+.word-list{
+	display: flex;
+	flex-wrap: wrap;
 }
 
-#verb-options {
-    color: $verb;
-    .word {
-        border: 1px solid $verb;
-    }
-    .word.active{
-        background-color: $verb;    
-        color: white;
-    }
-}
-
-#complement-options {
-    color: $complement;
-    .word {
-        border: 1px solid $complement;
-    }
-    .word.active{
-        background-color: $complement;    
-        color: white;
-    }
+.word {
+	width: 100%;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 2px solid black;
+	border-left: 1px solid black;
 }
 
 .subject {
@@ -291,7 +372,7 @@ a, a:link, a:visited, a:hover, a:active{
 
 #structure-options {
     .panel-heading {
-    background-color: orange;
+    background-color: $link;
     color: white;
     }
 }

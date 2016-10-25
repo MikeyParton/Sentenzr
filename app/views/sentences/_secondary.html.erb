@@ -1,0 +1,35 @@
+<% if session[:editing] != "structure" %>
+
+  <%= content_tag :div, class: ["panel", "panel-default", "#{session[:editing]}-panel"] do %>
+  	<div class="panel-header">
+      <%= fa_icon "circle" %>
+      <h4><%= eval("@sentence.#{session[:editing]}.word.capitalize") %><%= " (#{session[:editing]})" %></h4>
+      <%= fa_icon "circle"%>
+    </div>
+    <div class="panel-body">
+
+      <%= eval("@sentence.#{session[:editing]}.word.capitalize") %>
+      <h4>Definition:</h4>
+    	<table class="table table-striped">
+    		<tr>
+    			<td>To put something in the mouth and swallow (usually food).</td>
+    		</tr>
+    		<tr>
+    			<td>Some other definition.</td>
+    		</tr>
+    	</table>
+      <h4>Examples:</h4>
+      <table class="table table-striped">
+        <tr>
+          <td>To put something in the mouth and swallow (usually food).</td>
+        </tr>
+        <tr>
+          <td>Some other definition.</td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+
+<% else %>
+  <%= render "explanation_wrapper" %>
+<% end %>

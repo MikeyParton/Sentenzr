@@ -1,6 +1,7 @@
 $(".editable").removeClass("active");
 $("." + '<%= session[:editing] %>' ).addClass("active");
-$("#current-options").html("<%= j render 'editing' %>");
+$("#main").html("<%= j render 'main' %>");
+$("#secondary").html("<%= j render 'secondary' %>");
 
 <% if session[:editing] == "structure" %>
 	sliderInit();

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry: MyText
+  translatable_id: 1
+  translatable_type: 1
+
+two:
+  entry: MyText
+  translatable_id: 1
+  translatable_type: 1

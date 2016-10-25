@@ -25,8 +25,6 @@ function revealBlocks() {
 
 concealBlocks().then(function(){
 	$("#sentence").html("<%= j render 'sentence_body' %>").find(".block").css("opacity", 0);
-	if ($("#structure-options").length){
-		$("#explanation").html("<%= j render 'explanation_wrapper' %>");
-	}
+	$("#secondary").html("<%= j render 'secondary' %>");
 	revealBlocks();
 });

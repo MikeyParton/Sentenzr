@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929030401) do
+ActiveRecord::Schema.define(version: 20161025032349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20160929030401) do
     t.string   "pronoun"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "definitions", force: :cascade do |t|
+    t.text     "entry"
+    t.text     "example"
+    t.integer  "definable_id"
+    t.string   "definable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "sentences", force: :cascade do |t|
@@ -38,6 +47,16 @@ ActiveRecord::Schema.define(version: 20160929030401) do
     t.string   "pronoun"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "translations", force: :cascade do |t|
+    t.text     "entry"
+    t.text     "explanation"
+    t.integer  "language"
+    t.integer  "translatable_id"
+    t.string   "translatable_type"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "verbs", force: :cascade do |t|

@@ -1,49 +1,63 @@
-<div class="main-gallery type">
-  <div id="positive" class="gallery-cell">
-  	<div class="vertical-align"><%= fa_icon('check') %> &nbsp; Positive</div>
-  	<%= render partial: 'option_form', locals: { field: "structure", val: "positive" } %>
-  </div>
-  <div id="negative" class="gallery-cell">
-    <div class="vertical-align"><%= fa_icon('times') %> &nbsp; Negative</div>
-    <%= render partial: 'option_form', locals: { field: "structure", val: "negative" } %>
-  </div>
-  <div id="question" class="gallery-cell">
-    <div class="vertical-align"><span class="match-icon">?</span> &nbsp; Question</div>
-    <%= render partial: 'option_form', locals: { field: "structure", val: "question" } %>
-  </div>
-</div>
+<div id="main-structure-panel" class="panel panel-default"> 
 
-<div class="main-gallery tense">
-  <div id="present" class="gallery-cell">
-  	<div class="vertical-align"><i class='material-icons'>directions_car</i> &nbsp; Present</div>
-  	<%= render partial: 'option_form', locals: { field: "tense", val: "present" } %>
-   </div>
-  <div id="future" class="gallery-cell">
-    <div class="vertical-align"><%= fa_icon('rocket match-material-icons') %> &nbsp; Future</div>
-    <%= render partial: 'option_form', locals: { field: "tense", val: "future" } %>
-  </div>
-  <div id="past" class="gallery-cell">
-    <div class="vertical-align"><i class='material-icons'>directions_walk</i> &nbsp; Past</div>
-    <%= render partial: 'option_form', locals: { field: "tense", val: "past" } %>
-  </div>
-</div>
 
-<div class="main-gallery tense-modifier">
-  <div id="simple" class="gallery-cell">
-  	<div class="vertical-align"><%= fa_icon('hand-peace-o') %> &nbsp; Simple</div>
-  	<%= render partial: 'option_form', locals: { field: "tense_modifier", val: "simple" } %>
-   </div>
-  <div id="continuous" class="gallery-cell">
-    <div class="vertical-align"><%= fa_icon('play-circle') %> &nbsp; Continuous</div>
-    <%= render partial: 'option_form', locals: {field: "tense_modifier", val: "continuous" } %>
+    <div class="panel-header">
+      <%= fa_icon "circle" %>
+      <h4><%= fa_icon("cog") %><%= session[:editing].capitalize %></h4>
+      <%= fa_icon "circle"%>
+    </div>
+  <div class="panel-body">
+
+    <div class="main-gallery type">
+      <div id="positive" class="gallery-cell">
+      	<div class="vertical-align"><%= fa_icon('check') %> &nbsp; Positive</div>
+      	<%= render partial: 'option_form', locals: { field: "structure", val: "positive" } %>
+      </div>
+      <div id="negative" class="gallery-cell">
+        <div class="vertical-align"><%= fa_icon('times') %> &nbsp; Negative</div>
+        <%= render partial: 'option_form', locals: { field: "structure", val: "negative" } %>
+      </div>
+      <div id="question" class="gallery-cell">
+        <div class="vertical-align"><span class="match-icon">?</span> &nbsp; Question</div>
+        <%= render partial: 'option_form', locals: { field: "structure", val: "question" } %>
+      </div>
+    </div>
+
+    <div class="main-gallery tense">
+      <div id="present" class="gallery-cell">
+      	<div class="vertical-align"><i class='material-icons'>directions_car</i> &nbsp; Present</div>
+      	<%= render partial: 'option_form', locals: { field: "tense", val: "present" } %>
+       </div>
+      <div id="future" class="gallery-cell">
+        <div class="vertical-align"><%= fa_icon('rocket match-material-icons') %> &nbsp; Future</div>
+        <%= render partial: 'option_form', locals: { field: "tense", val: "future" } %>
+      </div>
+      <div id="past" class="gallery-cell">
+        <div class="vertical-align"><i class='material-icons'>directions_walk</i> &nbsp; Past</div>
+        <%= render partial: 'option_form', locals: { field: "tense", val: "past" } %>
+      </div>
+    </div>
+
+    <div class="main-gallery tense-modifier">
+      <div id="simple" class="gallery-cell">
+      	<div class="vertical-align"><%= fa_icon('hand-peace-o') %> &nbsp; Simple</div>
+      	<%= render partial: 'option_form', locals: { field: "tense_modifier", val: "simple" } %>
+       </div>
+      <div id="continuous" class="gallery-cell">
+        <div class="vertical-align"><%= fa_icon('play-circle') %> &nbsp; Continuous</div>
+        <%= render partial: 'option_form', locals: {field: "tense_modifier", val: "continuous" } %>
+      </div>
+      <div id="perfect" class="gallery-cell">
+        <div class="vertical-align"><%= fa_icon('diamond') %> &nbsp; Perfect</div>
+        <%= render partial: 'option_form', locals: {field: "tense_modifier", val: 'perfect' } %>
+      </div>
+      <div id="perfect_continuous" class="gallery-cell">
+        <div class="vertical-align"><%= fa_icon("diamond") %> &nbsp; <div class="wrap">Perfect
+        Continuous</div> &nbsp; <%= fa_icon('play-circle') %></div>
+        <%= render partial: 'option_form', locals: {field: "tense_modifier", val: 'perfect_continuous' } %>
+      </div>
+    </div>
+
   </div>
-  <div id="perfect" class="gallery-cell">
-    <div class="vertical-align"><%= fa_icon('diamond') %> &nbsp; Perfect</div>
-    <%= render partial: 'option_form', locals: {field: "tense_modifier", val: 'perfect' } %>
-  </div>
-  <div id="perfect-continuous" class="gallery-cell">
-    <div class="vertical-align"><%= fa_icon("diamond") %> &nbsp; <div class="wrap">Perfect
-    Continuous</div> &nbsp; <%= fa_icon('play-circle') %></div>
-    <%= render partial: 'option_form', locals: {field: "tense_modifier", val: 'perfect_continuous' } %>
-  </div>
+
 </div>
